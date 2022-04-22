@@ -1,0 +1,32 @@
+	
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start" defaultHref="/tabs/(planets:planets">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>{{ planets?.title }}</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="unfavoritePlanet()" *ngIf="isFavorite">
+          <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
+        </ion-button>
+        <ion-button (click)="favoritePlanet()" *ngIf="!isFavorite">
+          <ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
+        
+    </ion-toolbar>
+  </ion-header>
+   
+  <ion-content padding="">
+   
+   
+      <ion-item class="planets-info" lines="none">
+        <ion-icon name="planets" slot="start"></ion-icon>
+        Planets info: {{ planets.info }}
+      </ion-item>
+   
+      <ion-item class="planet-info" lines="none">
+        <ion-icon name="polution" slot="start"></ion-icon>
+        Polution: {{ planet.polution_info | Polution}}
+      </ion-item>
+    </ion-card>
+   
+  </ion-content>

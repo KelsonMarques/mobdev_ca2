@@ -1,0 +1,32 @@
+	
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start" defaultHref="/tabs/(people:people">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>{{ people?.title }}</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="unfavoritePeople()" *ngIf="isFavorite">
+          <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
+        </ion-button>
+        <ion-button (click)="favoritePeople()" *ngIf="!isFavorite">
+          <ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
+        
+    </ion-toolbar>
+  </ion-header>
+   
+  <ion-content padding="">
+   
+   
+      <ion-item class="people-info" lines="none">
+        <ion-icon name="people" slot="start"></ion-icon>
+        People age: {{ people.age }}
+      </ion-item>
+   
+      <ion-item class="people-info" lines="none">
+        <ion-icon name="gender" slot="start"></ion-icon>
+        Gender: {{ people.gender_info | Gender}}
+      </ion-item>
+    </ion-card>
+   
+  </ion-content>
